@@ -178,6 +178,10 @@ to{opacity:1;}
 
 <body>
 
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
 <div id="lock">
 
 <h1>❤️ For My Princess ❤️</h1>
@@ -353,12 +357,13 @@ Omu ❤️`;
 
 function next(){
 
-document.getElementById("home").style.display="none";
+    let music = document.getElementById("bgMusic");
+    music.play().catch(()=>{});
 
-document.getElementById("letter").style.display="flex";
+    document.getElementById("home").style.display="none";
+    document.getElementById("letter").style.display="flex";
 
-type();
-
+    type();
 }
 
 let i=0;
@@ -381,12 +386,6 @@ function song(){
 
 document.getElementById("letter").style.display="none";
 document.getElementById("gallery").style.display="flex";
-
-setTimeout(function(){
-
-window.open("https://youtu.be/2mWaqsC3U7k","_blank");
-
-},500);
 
 }
 
