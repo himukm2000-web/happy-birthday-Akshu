@@ -88,6 +88,7 @@ opacity:0;
 
   .gallery{
 display:grid;
+justify-items:center;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 margin-top:50px;
@@ -262,58 +263,35 @@ i++;
 setTimeout(type,35);
 
 }
-
+  
 }
 
 function song(){
-  
-  setTimeout(()=>{
 
-let btn=document.createElement("button");
+window.open("https://youtu.be/2mWaqsC3U7k","_blank");
 
-btn.innerHTML="Next ❤️";
+showGallery();
 
-btn.onclick=showGallery;
+}   // 👈 function song yahin khatam
 
-document.getElementById("letter").appendChild(document.createElement("br"));
-document.getElementById("letter").appendChild(btn);
-
-},9000);
+// 👇 ISKE JUST NICHE paste karna hai
 
 function showGallery(){
 
 document.getElementById("letter").style.display="none";
 
-document.getElementById("gallery").style.display="block";
+document.getElementById("gallery").style.display="flex";
 
 }
-  
-setTimeout(()=>{
-
-document.getElementById("letter").innerHTML+=`
-<br><br>
-
-<button onclick="showFinal()">
-
-One Last Surprise ❤️
-
-</button>
-
-`;
-
-},9000);
 
 function showFinal(){
 
-document.getElementById("letter").style.display="none";
+document.getElementById("gallery").style.display="none";
 
 document.getElementById("final").style.display="flex";
 
 }
-window.open("https://youtu.be/2mWaqsC3U7k","_blank");
-
-}
-
+ 
 setInterval(()=>{
 
 let h=document.createElement("div");
