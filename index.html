@@ -96,6 +96,9 @@ margin-top:50px;
 
 .gallery img{
 width:100%;
+max-width:280px;
+height:380px;
+object-fit:cover;
 border-radius:20px;
 box-shadow:0 0 20px rgba(255,77,136,.4);
 transition:.4s;
@@ -125,11 +128,74 @@ font-size:24px;
 margin-top:20px;
 }
   
+#lock{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+animation:fadeIn 1s;
+}
+
+#lock h1{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#ff4d88;
+margin-bottom:10px;
+}
+
+#lock p{
+color:#fff;
+margin:15px 0;
+font-size:20px;
+}
+
+#pass{
+padding:15px;
+width:280px;
+border:none;
+border-radius:30px;
+text-align:center;
+font-size:18px;
+outline:none;
+margin-top:15px;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
 </style>
 
 </head>
 
 <body>
+
+<div id="lock">
+
+<h1>❤️ For My Princess ❤️</h1>
+
+<p>Only Akshu Can Open This Surprise</p>
+
+<input
+id="pass"
+type="password"
+placeholder="Enter Secret Password">
+
+<button onclick="checkPass()">
+Unlock My Surprise ❤️
+</button>
+
+<p id="wrong"></p>
+
+</div>
 
 <section id="home">
 
@@ -211,7 +277,7 @@ One Last Surprise ❤️
   
 <section class="final" id="final" style="display:none;">
 
-<h1>Happy Birthday Akshu ❤️</h1>
+<h1>Happy Birthday My Princess ❤️</h1>
 
 <img src="images/couple.jpeg"
 style="width:280px;border-radius:20px;box-shadow:0 0 30px pink;margin-bottom:25px;">
@@ -238,9 +304,28 @@ Forever Yours,<br><br>
   
 <br>
 
-<button onclick="location.reload()">
-I Love You Forever ❤️
-</button>
+<p style="margin-top:30px;font-size:20px;color:white;line-height:1.8;max-width:800px;">
+
+Thank you for being the most beautiful part of my life. ❤️<br><br>
+
+From the moment you came into my life,<br>
+every day became brighter,<br>
+every smile became more meaningful,<br>
+and every dream became more beautiful. ✨❤️<br><br>
+
+No matter where life takes us,<br>
+I'll always choose you,<br>
+again and again. 💖<br><br>
+
+Happy Birthday, My Princess Akshu. 🎂❤️<br><br>
+
+I Love You Forever ❤️<br><br>
+
+<b style="font-size:32px;color:#ffe4ec;">
+— Forever Yours, Omu ❤️
+</b>
+
+</p>
 
 </section>
   
@@ -322,7 +407,35 @@ document.getElementById("final").style.display="flex";
 window.scrollTo(0,0);
 
 }
- 
+
+function checkPass(){
+
+document.getElementById("pass").addEventListener("keypress", function(e){
+    if(e.key==="Enter"){
+        checkPass();
+    }
+});  
+
+let pass=document.getElementById("pass").value;
+
+if(pass==="OmuAkshu2906"){
+
+document.getElementById("lock").style.opacity="0";
+
+setTimeout(function(){
+
+document.getElementById("lock").style.display="none";
+
+},800);
+
+}else{
+
+document.getElementById("wrong").innerHTML="💖 Hint: The day my Princess came into this world (29 June)";
+
+}
+
+}
+
 setInterval(()=>{
 
 let h=document.createElement("div");
