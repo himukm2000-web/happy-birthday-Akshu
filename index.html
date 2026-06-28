@@ -205,7 +205,7 @@ Unlock My Surprise ❤️
 
 <p>
 
-Dear Akshu... ❤️<br><br>
+Babe ❤️<br><br>
 
 Everyone gives gifts on birthdays.<br>
 I wanted to give you something different.<br><br>
@@ -406,6 +406,41 @@ document.getElementById("final").style.display="flex";
 
 window.scrollTo(0,0);
 
+// Fireworks
+confetti({
+    particleCount:180,
+    spread:120,
+    origin:{y:0.6}
+});
+
+setTimeout(()=>{
+    confetti({
+        particleCount:150,
+        angle:60,
+        spread:80,
+        origin:{x:0}
+    });
+},500);
+
+setTimeout(()=>{
+    confetti({
+        particleCount:150,
+        angle:120,
+        spread:80,
+        origin:{x:1}
+    });
+},900);
+
+}
+
+function showFinal(){
+
+document.getElementById("gallery").style.display="none";
+
+document.getElementById("final").style.display="flex";
+
+window.scrollTo(0,0);
+
 }
 
 function checkPass(){
@@ -455,6 +490,8 @@ setTimeout(()=>h.remove(),7000);
 },300);
 
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 </body>
 </html>
