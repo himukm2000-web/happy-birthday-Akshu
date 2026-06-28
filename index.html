@@ -268,13 +268,16 @@ setTimeout(type,35);
 
 function song(){
 
+document.getElementById("letter").style.display="none";
+document.getElementById("gallery").style.display="flex";
+
+setTimeout(function(){
+
 window.open("https://youtu.be/2mWaqsC3U7k","_blank");
 
-showGallery();
+},500);
 
-}   // 👈 function song yahin khatam
-
-// 👇 ISKE JUST NICHE paste karna hai
+}
 
 function showGallery(){
 
@@ -289,6 +292,8 @@ function showFinal(){
 document.getElementById("gallery").style.display="none";
 
 document.getElementById("final").style.display="flex";
+
+window.scrollTo(0,0);
 
 }
  
