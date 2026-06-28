@@ -257,7 +257,7 @@ Every picture reminds me how lucky I am to have you.
 <div class="gallery">
 
 <img src="images/akshu1.jpeg">
-<img src="images/akshu2.jpeg">
+<img src="images/akshu8.jpeg">
 <img src="images/akshu3.jpeg">
 <img src="images/akshu4.jpeg">
 <img src="images/akshu5.jpeg">
@@ -400,76 +400,68 @@ document.getElementById("gallery").style.display="flex";
 
 function showFinal(){
 
-document.getElementById("gallery").style.display="none";
+    document.getElementById("gallery").style.display="none";
+    document.getElementById("final").style.display="flex";
 
-document.getElementById("final").style.display="flex";
-
-window.scrollTo(0,0);
-
-// Fireworks
-confetti({
-    particleCount:180,
-    spread:120,
-    origin:{y:0.6}
-});
-
-setTimeout(()=>{
-    confetti({
-        particleCount:150,
-        angle:60,
-        spread:80,
-        origin:{x:0}
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
     });
-},500);
 
-setTimeout(()=>{
-    confetti({
-        particleCount:150,
-        angle:120,
-        spread:80,
-        origin:{x:1}
-    });
-},900);
+    if(typeof confetti === "function"){
 
-}
+        confetti({
+            particleCount:200,
+            spread:120,
+            origin:{y:0.6}
+        });
 
-function showFinal(){
+        setTimeout(()=>{
+            confetti({
+                particleCount:150,
+                angle:60,
+                spread:90,
+                origin:{x:0,y:0.8}
+            });
+        },500);
 
-document.getElementById("gallery").style.display="none";
+        setTimeout(()=>{
+            confetti({
+                particleCount:150,
+                angle:120,
+                spread:90,
+                origin:{x:1,y:0.8}
+            });
+        },1000);
 
-document.getElementById("final").style.display="flex";
-
-window.scrollTo(0,0);
-
+    }
 }
 
 function checkPass(){
 
+    let pass = document.getElementById("pass").value;
+
+    if(pass === "OmuAkshu2906"){
+
+        document.getElementById("lock").style.opacity = "0";
+
+        setTimeout(function(){
+            document.getElementById("lock").style.display = "none";
+        },800);
+
+    }else{
+
+        document.getElementById("wrong").innerHTML =
+        "💖 Hint: The day my Princess came into this world (29 June)";
+    }
+
+}
+
 document.getElementById("pass").addEventListener("keypress", function(e){
-    if(e.key==="Enter"){
+    if(e.key === "Enter"){
         checkPass();
     }
-});  
-
-let pass=document.getElementById("pass").value;
-
-if(pass==="OmuAkshu2906"){
-
-document.getElementById("lock").style.opacity="0";
-
-setTimeout(function(){
-
-document.getElementById("lock").style.display="none";
-
-},800);
-
-}else{
-
-document.getElementById("wrong").innerHTML="💖 Hint: The day my Princess came into this world (29 June)";
-
-}
-
-}
+});
 
 setInterval(()=>{
 
@@ -492,6 +484,6 @@ setTimeout(()=>h.remove(),7000);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
+  
 </body>
 </html>
