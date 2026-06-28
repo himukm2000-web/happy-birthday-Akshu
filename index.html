@@ -167,6 +167,34 @@ Start Surprise 🎁
 </button>
 
 </section>
+  
+  <section id="gallery" style="padding:80px 20px;text-align:center;display:none;">
+
+<h1 style="font-family:'Great Vibes',cursive;font-size:60px;color:#ff4d88;">
+Our Beautiful Memories ❤️
+</h1>
+
+<p style="margin-bottom:30px;">
+Every picture reminds me how lucky I am to have you.
+</p>
+
+<div class="gallery">
+
+<img src="https://picsum.photos/300/400?1">
+<img src="https://picsum.photos/300/400?2">
+<img src="https://picsum.photos/300/400?3">
+<img src="https://picsum.photos/300/400?4">
+
+</div>
+
+<br><br>
+
+<button onclick="showFinal()">
+One Last Surprise ❤️
+</button>
+
+</section>
+  
 <section class="final" id="final" style="display:none;">
 
 <h1>Happy Birthday Akshu ❤️</h1>
@@ -238,6 +266,27 @@ setTimeout(type,35);
 }
 
 function song(){
+  
+  setTimeout(()=>{
+
+let btn=document.createElement("button");
+
+btn.innerHTML="Next ❤️";
+
+btn.onclick=showGallery;
+
+document.getElementById("letter").appendChild(document.createElement("br"));
+document.getElementById("letter").appendChild(btn);
+
+},9000);
+
+function showGallery(){
+
+document.getElementById("letter").style.display="none";
+
+document.getElementById("gallery").style.display="block";
+
+}
   
 setTimeout(()=>{
 
