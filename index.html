@@ -357,9 +357,6 @@ Omu ❤️`;
 
 function next(){
 
-    let music = document.getElementById("bgMusic");
-    music.play().catch(()=>{});
-
     document.getElementById("home").style.display="none";
     document.getElementById("letter").style.display="flex";
 
@@ -440,15 +437,18 @@ function checkPass(){
 
     let pass = document.getElementById("pass").value;
 
-    if(pass === "OmuAkshu2906"){
+if(pass === "OmuAkshu2906"){
 
-        document.getElementById("lock").style.opacity = "0";
+    let music = document.getElementById("bgMusic");
+    music.play().catch(()=>{});
 
-        setTimeout(function(){
-            document.getElementById("lock").style.display = "none";
-        },800);
+    document.getElementById("lock").style.opacity = "0";
 
-    }else{
+    setTimeout(function(){
+        document.getElementById("lock").style.display = "none";
+    },800);
+
+}else{
 
         document.getElementById("wrong").innerHTML =
         "💖 Hint: The day my Princess came into this world (29 June)";
